@@ -9,15 +9,9 @@ function setup() {
 function draw() {
     background(200);
 
-    //circle 1
-    circle(50, 50, 55);
-    fill("yellow");
+}
 
-    //circle 2
-    circle(170, 120, 85);
-    fill("green");
+function drawEllipse(300, 260, 170, 0, 255, 255) {
+    background(200);
 
-    //circle 3
-    circle(300, 260, 170);
-    fill("blue");
 }
