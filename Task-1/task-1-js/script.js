@@ -92,14 +92,14 @@ function setup() {
     //     /* 1: Select the first paragraph and replace the text within the paragraph... */
     //     /***CODE */
 
-    //     // create variable for first <p> 
+    //     // create variable for first <p>
     //     let firstParagraph = document.querySelector("p")
 
     //     // more variables
     //     let yourName = "Acacia Williams";
     //     let today = new Date().toLocaleDateString(); // gets date -> generates date
 
-    //     // replace old text with new text using the variables 
+    //     // replace old text with new text using the variables
     //     firstParagraph.textContent =
     //         `New text in paragraph one: text changed by ${yourName} on the following date: ${today}.`;
 
@@ -119,7 +119,7 @@ function setup() {
     //     /* 3: Change the src element of the first image element on the page to be ...
     //     /***CODE */
 
-    //     // create variable for first image -> select first <img> 
+    //     // create variable for first image -> select first <img>
     //     let firstImg = document.querySelector("img");
 
     //     // change src attribute using the setAttribute() method
@@ -169,10 +169,10 @@ function setup() {
 
     //     /*************************************** */
     //     /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
-    //     then access all elements with class name inner-container and save to a variable called `innerContainers`. 
-    //     Next, iterate over the colors array, and for each color: 
-    //     assign the element from innerContainers variable with the same index 
-    //     (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
+    //     then access all elements with class name inner-container and save to a variable called `innerContainers`.
+    //     Next, iterate over the colors array, and for each color:
+    //     assign the element from innerContainers variable with the same index
+    //     (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...)
     //     a background using that color.
     //     /***CODE */
 
@@ -207,9 +207,20 @@ function setup() {
     /* 1E:  Set the background of this paragraph element to be green */
     /* 1F:  Set the color of the text in this paragraph element to be white */
     /* 1G: Append this new element to the parent variable within the function. */
-    /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
+    /* 1H: Iterate through the allPTagsThree array and call customCreateElement(),
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
+
+    // access all paragraph elements, assign them to variable ("allPTagsThree")
+    let allPTagsThree = document.querySelectorAll("p");
+
+    // create function:
+    function customCreateElement(parent) {
+
+    }
+
+
+    // 
 
 
     /***EXPLANATION::
