@@ -211,21 +211,42 @@ function setup() {
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
 
-    // access all paragraph elements, assign them to variable ("allPTagsThree")
+    // access all <p> elements in HTML -> create nodeList of <p> -> assign nodeList to variable ("allPTagsThree")
     let allPTagsThree = document.querySelectorAll("p");
 
-    // create function:
+    /**
+     * Function that creates a new green paragraph element and adds it to 'parent'
+     */
     function customCreateElement(parent) {
-
+        // create new paragraph variable in body of function:
+        let newParagraph = document.createElement("p"); // selects paragraph elements -> assigns them to variable (newParagraph)
+        // Paragraph element - text and styles 
+        newParagraph.textContent = "using create Element"; // adds text to p element -> "using create Element"
+        newParagraph.style.backgroundColor = "green"; // p element background color -> green
+        newParagraph.style.color = "white"; //  element text color -> white
+        // append new <p> to parent
+        parent.appendChild(newParagraph);
     }
 
+    console.log(allPTagsThree.length);
 
-    // 
+    // (Simpler) For Loop: number of times or how many p elements in array we have
+    // for (let i = 0; i < allPTagsThree.length; i++) {
+    //     customCreateElement(allPTagsThree[i]);
+    // }
 
+    // (Updated) For Loop: For each element of allPTagsThree -> call that element singleParagraph -> and run customCreateElement on it
+    for (let singleParagraph of allPTagsThree) {
+        customCreateElement(singleParagraph);
+    }
 
     /***EXPLANATION::
      * 
+     * 1. We access all p elements (<p>) in HTML -> create NodeList of <p> -> and assign <p>> nodeList to variable "allPTagsThree"
      * 
+     * 2. We use the Nodelist (assigned to allPTagsThree variable) to loop/iterate through each <p>, 
+     *    and for EACH of those elements, we call customCreateElement function to append a new <p> 
+     *    (with green bg, white text, and "using create element text")
      */
 
     /*************************************** */
