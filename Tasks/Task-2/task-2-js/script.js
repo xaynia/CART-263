@@ -106,14 +106,103 @@ function setup() {
   /**************************BUTTONS************************* */
 
   /*A:: COLOR BUTTONS ********************************************/
-  /* TO DO: 
+  /* TO DO:
   *  1: Access each color button and assign an event listener to listen for the click event
   *  2:Write a callback function - that when a specific color button is clicked,
   *  access its id - and use the id to set the current drawing color (currentPresets.color)
   *  3: Finally access all the current points drawn (hint: they all have the class name `point`)
      and change their current background color to the selected color.
   */
+
+
+
+  // Accesses .color-button NodeList -> store NodeList in "colorButtons" variable
   let colorButtons = document.querySelectorAll(".color-button");
+
+  console.log(colorButtons);
+
+
+  // For each .color-button in the in the Nodelist -> add event listener
+  for (let button of colorButtons) {
+    // when button is clicked, run function below
+    button.addEventListener("click", function (clickEvent) {
+      // assign clicked button (color) ID to "colorID" variable:
+      let colorID = clickEvent.target.id;
+      // set current drawing color = "colorID" (clicked button ID color)
+      currentPresets.color = colorID;
+
+      // access all .point class (points drawn) -> store (.point) nodeList -> in "pointsDrawn" (variable)
+      let pointsDrawn = document.querySelectorAll(".point");
+
+      // change "pointsDrawn" background color to selected color
+      pointsDrawn.forEach(function (point) {
+        point.style.background = colorID;
+      });
+    });
+  };
+
+
+
+  /**
+   * IGNORE 
+   */
+
+  // For each .color-button in the in the Nodelist -> add event listener
+  // colorButtons.forEach(function (button) {
+  //   // when button is clicked, run function below
+  //   button.addEventListener("click", function (clickEvent) {
+  //     // assign clicked button (color) ID to "colorID" variable:
+  //     let colorID = clickEvent.target.id;
+  //     // set current drawing color = "colorID" (clicked button ID color)
+  //     currentPresets.color = colorID;
+
+  //     // access all .point class (points drawn) -> store (.point) nodeList -> in "pointsDrawn" (variable)
+  //     let pointsDrawn = document.querySelectorAll(".point");
+
+  //     // change "pointsDrawn" background color to selected color
+  //     pointsDrawn.forEach(function (point) {
+  //       point.style.background = colorID;
+  //     });
+  //   });
+
+
+
+
+
+  /**
+   * IGNORE (for me to compare the same loop, different ways)
+   */
+
+  //   // 1. 
+  //   pointsDrawn.forEach(function (point) {
+  //     point.style.background = colorID;
+  //   });
+  //   // 2. uses function 
+  //   pointsDrawn.forEach(changeBackground);
+
+
+
+
+  //   // 3.
+  //   for (let point of pointsDrawn) {
+  //     point.style.background = colorID;
+  //   }
+  //   // 4.
+  //   for (let i = o; i < pointsDrawn.length; i++) {
+  //     pointsDrawn[i].style.background = colorID;
+  //   }
+
+
+
+  // // 2-function -> for: pointsDrawn.forEach(changeBackground);
+  // function changeBackground(point) {
+  //   point.style.background = colorID;
+  // }
+
+
+
+
+
 
   /*B:: STROKE BUTTON ********************************************/
   /* TO DO: 
